@@ -1,0 +1,45 @@
+<div class="post-header">
+    {{ if ne .Date.Year 1 }}
+    <div class="meta">
+        <div class="date" style="font-size: 0.85em; color: #444; font-weight: normal;">
+            <span class="day" style="font-size: 1em; color: #333;">{{ dateFormat "02" .Date }}</span>
+            <span class="rest" style="font-size: 0.9em;">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d"
+                .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+        </div>
+    </div>
+    {{ end }}
+    <div class="matter">
+        <h1 class="title">{{ .Title }}
+            {{ if .Params.genres }}
+            {{ range .Params.genres }}
+            <a href="{{ "/genres/" | relLangURL }}{{ . | urlize }}" style="background: #e8f5e8; color: #2d5a2d; padding: 2px 6px; border-radius: 3px; font-size: 0.5em; margin-left: 8px; text-decoration: none;">{{ . }}</a>
+            {{ end }}
+            {{ end }}
+            {{ if .Params.event_date }}
+            <span style="background: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 3px; font-size: 0.5em; margin-left: 8px; font-weight: 500;">Event Date: {{ dateFormat "Jan 2" .Params.event_date }}</span>
+            {{ end }}
+        </h1>
+        
+        <!-- Tags and Genres below title -->
+        <div style="margin-top: 8px; font-size: 0.85em;">
+            {{ if .Params.tags }}
+            {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" style="background: #e1f0ff; color: #1a5490; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; margin-right: 4px; text-decoration: none;">#{{ . }}</a>
+            {{ end }}
+            {{ end }}
+            
+            {{ if or .Params.event_page .Params.recordings_link }}
+            <div style="margin-top: 6px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                {{ if .Params.event_page }}
+                <a href="{{ .Params.event_page }}" target="_blank" style="background: linear-gradient(135deg, #a8b8ff 0%, #c8a8ff 100%); color: #4a4a4a; padding: 4px 10px; border-radius: 6px; font-size: 0.9em; text-decoration: none; font-weight: 600; border: 1px solid #d8c8ff; box-shadow: 0 1px 3px rgba(168, 184, 255, 0.2);">🌐 Event Page</a>
+                {{ end }}
+                {{ if .Params.recordings_link }}
+                <a href="{{ .Params.recordings_link }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 4px 10px; border-radius: 4px; font-size: 0.9em; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">🎥 Recordings</a>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<hr class="footer-separator" />
+
+{{ if isset .Site.Params "github" }}
+<div class="back">
+    <a href="{{ .Site.Params.github }}/blob/master/content/{{ .File.Path }}" title="github"><i
+            data-feather="github"></i> Edit this on GitHub</a>
+</div>
+{{ end }}
+
+<div class="back">
+    <a href="{{ $.Site.BaseURL }}"><span aria-hidden="true">← Back</span></a>
+</div>
+
+
+<div class="back">
+    {{ if isset .Site.Params "footers" }}
+    {{ if ne .Type "page" }}
+    Next time, we'll talk about <i>"{{ range .Site.Params.footers | shuffle | first 1 }}{{ .
+        }}"</i>{{ end
+    }}
+    {{ end }}
+    {{ end }}
+</div>

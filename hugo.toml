@@ -1,0 +1,29 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'AI Events Recap'
+theme = 'ink-free'
+
+[taxonomies]
+  tag = "tags"
+  genre = "genres"
+
+# Typo theme configuration (commented out)
+# [params]
+#   author = "Your Name"
+#   description = "A minimal Hugo blog"
+#   
+#   # Required for showing posts on homepage
+#   homeCollection = 'posts'
+#   homeCollectionTitle = 'Posts'
+#   
+#   # Optional enhancements
+#   paginationSize = 10
+#   listSummaries = true
+#   listDateFormat = '2 Jan 2006'
+
+# Ink Free theme configuration
+[params]
+  author = "Your Name"
+  description = "A minimal Hugo blog"
+  wpm = 200
+  maxTags = 5

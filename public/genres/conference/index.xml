@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference on AI Events Recap</title>
+    <link>http://localhost:1313/genres/conference/</link>
+    <description>Recent content in Conference on AI Events Recap</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/genres/conference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weights and Biases Fully Connected</title>
+      <link>http://localhost:1313/posts/2025-07-18__wandb-fully-connected-sf/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2025-07-18__wandb-fully-connected-sf/</guid>
+      <description>Getting started with Hugo - a fast and flexible static site generator. Learn about key features and how to create your first blog post.</description>
+    </item>
+  </channel>
+</rss>

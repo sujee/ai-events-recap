@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Baking on AI Events Recap</title>
+    <link>http://localhost:1313/tags/baking/</link>
+    <description>Recent content in Baking on AI Events Recap</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/baking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classic Chocolate Chip Cookies</title>
+      <link>http://localhost:1313/posts/2025-07-17__chocolate-chip-cookies/</link>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2025-07-17__chocolate-chip-cookies/</guid>
+      <description>A timeless recipe for perfectly chewy chocolate chip cookies that never fails to satisfy.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,15 @@
+[submodule "themes/smol"]
+	path = themes/smol
+	url = https://github.com/colorchestra/smol.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "themes/mini"]
+	path = themes/mini
+	url = https://github.com/nodejh/hugo-theme-mini.git
+[submodule "themes/typo"]
+	path = themes/typo
+	url = https://github.com/tomfran/typo.git
+[submodule "themes/ink-free"]
+	path = themes/ink-free
+	url = https://github.com/chollinger93/ink-free.git
