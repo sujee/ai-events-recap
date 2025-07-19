@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html {{- if (eq .Site.Params.mode "dark" ) -}}class="dark" {{ end }}>
+{{ partial "header.html" . }}
+
+<body>
+	<div class="container wrapper">
+		{{ partial "head.html" . }}
+		
+		<div class="recent-posts section">
+			<h1 class="page-title" style="margin-bottom: 20px;">{{ .Title }}</h1>
+			
+			<div class="posts">
+				{{ $pages := .Pages }}
+				{{ range $pages }}
+				<div class="post">
+					<div class="post-header">
+						<div class="meta">
+							<div class="date" style="font-size: 0.8em; color: #555; font-weight: normal;">
+								<span class="day" style="font-size: 0.9em;">{{ dateFormat "02" .Date }}</span>
+								<span class="rest" style="font-size: 0.85em;">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d"
+									.Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end
+									}}</span>
+							</div>
+						</div>
+						<div class="matter">
+							<h4 class="title small">
+								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup
+									class="draft-label">DRAFT</sup>{{ end }}</a>
+								{{ if .Params.genres }}
+								{{ range .Params.genres }}
+								<a href="{{ "/genres/" | relLangURL }}{{ . | urlize }}" style="background: #e8f5e8; color: #2d5a2d; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 8px; text-decoration: none;">{{ . }}</a>
+								{{ end }}
+								{{ end }}
+								{{ if .Params.event_date }}
+								<span style="background: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 8px; font-weight: 500;">Event Date: {{ dateFormat "Jan 2" .Params.event_date }}</span>
+								{{ end }}
+							</h4>
+							<!-- Metadata line -->
+							<div style="margin-bottom: 8px; font-size: 0.85em; line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+								{{ if .Params.tags }}
+								{{ range .Params.tags }}
+								<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
+								{{ end }}
+								{{ end }}
+								
+								{{ if .Params.event_page }}
+								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
+								{{ end }}
+								
+								{{ if .Params.recordings_link }}
+								<a href="{{ .Params.recordings_link }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 4px;">
+									{{ if or (strings.Contains .Params.recordings_link "youtube.com") (strings.Contains .Params.recordings_link "youtu.be") }}
+									{{ partial "icons/youtube.html" . }}
+									Recordings
+									{{ else }}
+									🎥 Recordings
+									{{ end }}
+								</a>
+								{{ end }}
+								
+								{{ if .Params.recordings_link2 }}
+								<a href="{{ .Params.recordings_link2 }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 4px;">
+									{{ if or (strings.Contains .Params.recordings_link2 "youtube.com") (strings.Contains .Params.recordings_link2 "youtu.be") }}
+									{{ partial "icons/youtube.html" . }}
+									Recordings 2
+									{{ else }}
+									🎥 Recordings 2
+									{{ end }}
+								</a>
+								{{ end }}
+							</div>
+							
+							<span class="description">
+								{{ if .Params.summary }}
+								{{ .Params.summary }}
+								{{ else if isset .Params "description" }}
+								{{ .Description }}
+								{{ else if gt (len .RawContent) 120 }}
+								{{ slicestr .RawContent 0 120 }}...
+								{{ else }}
+								{{ .RawContent }}
+								{{ end }}
+							</span>
+						</div>
+					</div>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+	{{ partial "footer.html" . }}
+</body>
+
+</html>
