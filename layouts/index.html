@@ -42,11 +42,18 @@
 								{{ end }}
 								
 								{{ if .Params.event_page }}
-								<a href="{{ .Params.event_page }}" target="_blank" style="background: linear-gradient(135deg, #a8b8ff 0%, #c8a8ff 100%); color: #4a4a4a; padding: 4px 10px; border-radius: 6px; text-decoration: none; font-weight: 600; border: 1px solid #d8c8ff; box-shadow: 0 1px 3px rgba(168, 184, 255, 0.2);">🌐 Event Page</a>
+								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
 								{{ end }}
 								
 								{{ if .Params.recordings_link }}
-								<a href="{{ .Params.recordings_link }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">🎥 Recordings</a>
+								<a href="{{ .Params.recordings_link }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 4px;">
+									{{ if or (strings.Contains .Params.recordings_link "youtube.com") (strings.Contains .Params.recordings_link "youtu.be") }}
+									{{ partial "icons/youtube.html" . }}
+									Recordings
+									{{ else }}
+									🎥 Recordings
+									{{ end }}
+								</a>
 								{{ end }}
 							</div>
 							

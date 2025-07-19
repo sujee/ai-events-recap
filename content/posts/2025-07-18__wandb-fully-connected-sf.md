@@ -6,8 +6,8 @@ tags: ['ai', 'agents', 'featured ⭐']
 summary: '2 day conference in San Francisco, CA focused on Agent building and model training'
 genres: ['conference']
 event_date: '2025-06-15'
-event_page: 'https://wandb.ai/fully-connected'
-recordings_link: 'https://youtube.com/wandb-recordings'
+event_page: 'https://wandb.ai/site/resources/events/fully-connected/san-francisco'
+recordings_link: 'https://www.youtube.com/playlist?list=PLD80i8An1OEHWNCwZUgvMe0d1F0m2aUFw'
 ---
 
 
