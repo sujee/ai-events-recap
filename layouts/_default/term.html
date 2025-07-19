@@ -35,16 +35,12 @@
 								<span style="background: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 8px; font-weight: 500;">Event Date: {{ dateFormat "Jan 2" .Params.event_date }}</span>
 								{{ end }}
 							</h4>
-							<!-- Metadata line -->
-							<div style="margin-bottom: 8px; font-size: 0.85em; line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+							<!-- First line: Tags + Recordings -->
+							<div style="margin-bottom: 6px; font-size: 0.85em; line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
 								{{ if .Params.tags }}
 								{{ range .Params.tags }}
 								<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
 								{{ end }}
-								{{ end }}
-								
-								{{ if .Params.event_page }}
-								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
 								{{ end }}
 								
 								{{ if .Params.recordings_link }}
@@ -69,6 +65,46 @@
 								</a>
 								{{ end }}
 							</div>
+							
+							<!-- Second line: Event Page + Social Media -->
+							{{ if or .Params.event_page .Params.social_linkedin .Params.social_x .Params.social_bluesky .Params.social_mastodon .Params.social_instagram .Params.social_youtube }}
+							<div style="margin-bottom: 8px; font-size: 0.85em; line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+								{{ if .Params.event_page }}
+								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
+								{{ end }}
+								
+								{{ if .Params.social_linkedin }}
+								<a href="{{ .Params.social_linkedin }}" target="_blank" style="background: #0077b5; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="LinkedIn">
+									{{ partial "icons/linkedin.html" . }}
+								</a>
+								{{ end }}
+								{{ if .Params.social_x }}
+								<a href="{{ .Params.social_x }}" target="_blank" style="background: #000000; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="X (Twitter)">
+									{{ partial "icons/twitter.html" . }}
+								</a>
+								{{ end }}
+								{{ if .Params.social_bluesky }}
+								<a href="{{ .Params.social_bluesky }}" target="_blank" style="background: #00a8e8; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="Bluesky">
+									{{ partial "icons/bluesky.html" . }}
+								</a>
+								{{ end }}
+								{{ if .Params.social_mastodon }}
+								<a href="{{ .Params.social_mastodon }}" target="_blank" style="background: #6364ff; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="Mastodon">
+									{{ partial "icons/mastodon.html" . }}
+								</a>
+								{{ end }}
+								{{ if .Params.social_instagram }}
+								<a href="{{ .Params.social_instagram }}" target="_blank" style="background: #e4405f; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="Instagram">
+									{{ partial "icons/instagram.html" . }}
+								</a>
+								{{ end }}
+								{{ if .Params.social_youtube }}
+								<a href="{{ .Params.social_youtube }}" target="_blank" style="background: #ff0000; color: white; padding: 4px 6px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; font-size: 0.8em;" title="YouTube">
+									{{ partial "icons/youtube.html" . }}
+								</a>
+								{{ end }}
+							</div>
+							{{ end }}
 							
 							<span class="description">
 								{{ if .Params.summary }}
