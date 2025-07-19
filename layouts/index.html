@@ -55,6 +55,17 @@
 									{{ end }}
 								</a>
 								{{ end }}
+								
+								{{ if .Params.recordings_link2 }}
+								<a href="{{ .Params.recordings_link2 }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 4px;">
+									{{ if or (strings.Contains .Params.recordings_link2 "youtube.com") (strings.Contains .Params.recordings_link2 "youtu.be") }}
+									{{ partial "icons/youtube.html" . }}
+									Recordings 2
+									{{ else }}
+									🎥 Recordings 2
+									{{ end }}
+								</a>
+								{{ end }}
 							</div>
 							
 							<span class="description">
