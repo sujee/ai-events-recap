@@ -56,6 +56,20 @@
 									">{{ . }}</a>
 									{{ end }}
 									{{ end }}
+									{{ if .Params.categories }}
+									{{ range .Params.categories }}
+									<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" style="
+										background: #f3e8ff; 
+										color: #7c3aed; 
+										padding: 4px 8px; 
+										border-radius: 6px; 
+										font-size: 0.75em; 
+										text-decoration: none;
+										font-weight: 500;
+										border: 1px solid #ddd6fe;
+									">{{ . }}</a>
+									{{ end }}
+									{{ end }}
 									{{ if .Params.event_date }}
 									<span style="
 										background: #fef3c7; 
@@ -65,7 +79,7 @@
 										font-size: 0.75em; 
 										font-weight: 500;
 										border: 1px solid #fde68a;
-									">Event: {{ dateFormat "Jan 2" .Params.event_date }}</span>
+									">Event date: {{ dateFormat "Jan 2" .Params.event_date }}</span>
 									{{ end }}
 								</div>
 							</h4>
