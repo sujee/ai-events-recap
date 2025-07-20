@@ -1,7 +1,7 @@
 ---
 date: '2025-07-18'
 draft: false
-title: 'Weights and Biases Fully Connected'
+title: 'Weights and Biases Fully Connected - 2025 San Francisco'
 tags: ['ai', 'agents', 'featured']
 summary: '2 day conference in San Francisco, CA focused on Agent building and model training'
 genres: ['conference']
