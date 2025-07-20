@@ -2,6 +2,7 @@ baseURL = 'https://sujee.github.io/ai-events-recap/'
 languageCode = 'en-us'
 title = 'AI Events Recap'
 theme = 'ink-free'
+canonifyURLs = true
 
 [caches]
   [caches.images]
