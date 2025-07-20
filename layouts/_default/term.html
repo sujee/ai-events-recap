@@ -7,7 +7,18 @@
 		{{ partial "head.html" . }}
 		
 		<div class="recent-posts section">
-			<h1 class="page-title" style="margin-bottom: 20px;">{{ .Title }}</h1>
+			<div style="margin-bottom: 25px;">
+				<h1 class="page-title" style="margin-bottom: 8px; display: inline-flex; align-items: baseline; gap: 8px;">
+					<span>{{ if eq .Type "tags" }}#{{ end }}{{ .Title | lower }}</span>
+					<span style="
+						color: #6c757d; 
+						font-size: 0.85rem; 
+						font-weight: 400;
+						font-style: italic;
+					">({{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }})</span>
+				</h1>
+				<p style="color: #666; margin: 0; font-size: 0.9rem;">All posts with {{ lower .Type | singularize }} "{{ if eq .Type "tags" }}#{{ end }}{{ .Title | lower }}"</p>
+			</div>
 			
 			<div class="posts">
 				{{ $pages := .Pages }}

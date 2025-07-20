@@ -1,0 +1,40 @@
+<div class="header">
+	{{ if .Site.Params.Avatar }}
+		<div class="avatar">
+			<a href="{{ .Site.BaseURL }}">
+				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
+			</a>
+		</div>
+	{{ end }}
+	
+	<!-- Header with title and navigation on same line -->
+	<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+		<h1 class="site-title" style="margin: 0;"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+		<nav class="nav">
+			<ul class="flat" style="margin: 0; display: flex; gap: 20px;">
+				{{ range .Site.Menus.main }}
+				<li style="list-style: none;">
+					<a href="{{ .URL }}">{{ .Name }}</a>
+				</li>
+				{{ end }}
+			</ul>
+		</nav>
+	</div>
+	
+	<div class="site-description">
+		{{- if isset .Site.Params "subtitle" -}}
+		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
+		{{- end -}}
+		<nav class="nav social">
+			<ul class="flat">
+				{{- range $index, $key := .Site.Params.Social -}}
+					<li><a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a></li>
+				{{- end -}}
+
+				{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
+                			<span class="scheme-toggle"><a href="#" id="scheme-toggle"></a>
+				{{- end -}}
+			</ul>
+		</nav>
+	</div>
+</div>

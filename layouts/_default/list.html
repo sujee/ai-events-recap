@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html {{- if (eq .Site.Params.mode "dark" ) -}}class="dark" {{ end }}>
+{{ partial "header.html" . }}
+
+<body>
+	<div class="container wrapper list">
+		{{ partial "head.html" . }}
+
+		{{ if isset .Data "Term" }}
+			<div style="margin-bottom: 20px;">
+				<h2 style="margin-bottom: 8px; display: inline-flex; align-items: center; gap: 10px;">
+					<span>{{ .Data.Term }}</span>
+					<span style="
+						background: #4f46e5; 
+						color: white; 
+						padding: 4px 10px; 
+						border-radius: 15px; 
+						font-size: 0.8rem; 
+						font-weight: 600;
+					">({{ len .Data.Pages }} {{ if eq (len .Data.Pages) 1 }}post{{ else }}posts{{ end }})</span>
+				</h2>
+				<p style="color: #666; margin: 0; font-size: 0.9rem;">Posts tagged with "{{ .Data.Term }}"</p>
+			</div>
+		{{ else }}
+		<h2 class="page-title">{{ .Name }}</h2>
+		{{ end }}
+
+		<ul class="posts flat" style="list-style: none; padding: 0;">
+			{{- range .Data.Pages -}}
+			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
+			{{- else -}}
+			<li class="post" style="margin-bottom: 20px; padding: 15px; border: 1px solid #e9ecef; border-radius: 8px; background: #fafbfc;">
+				<div class="post-header">
+					<div class="meta">
+						<div class="date" style="font-size: 0.8em; color: #6c757d; font-weight: normal;">
+							<span class="day" style="font-size: 0.9em;">{{ dateFormat "02" .Date }}</span>
+							<span class="rest" style="font-size: 0.85em;">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+						</div>
+					</div>
+					<div class="matter">
+						<h4 class="title small" style="margin-bottom: 8px;">
+							<a href="{{ .RelPermalink }}" style="text-decoration: none; color: #4f46e5; font-weight: 600;">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
+						</h4>
+						
+						<!-- Tags display -->
+						{{ if .Params.tags }}
+						<div style="margin-bottom: 8px;">
+							{{ range .Params.tags }}
+							<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" style="
+								background: #e1f0ff; 
+								color: #1a5490; 
+								padding: 3px 8px; 
+								border-radius: 12px; 
+								text-decoration: none; 
+								font-size: 0.75rem; 
+								margin-right: 6px;
+								border: 1px solid #cce7ff;
+							">#{{ . }}</a>
+							{{ end }}
+						</div>
+						{{ end }}
+						
+						<span class="description" style="color: #495057; font-size: 0.9rem; line-height: 1.4;">
+							{{ if isset .Params "summary" }}
+								{{ .Params.summary }}
+							{{ else if isset .Params "description" }}
+								{{ .Description }}
+							{{ else if gt (len .RawContent) 120 }}
+								{{ slicestr .RawContent 0 120 }}...
+							{{ else }}
+								{{ .RawContent }}
+							{{ end }}
+						</span>
+					</div>
+				</div>
+			</li>
+			{{- end -}}
+			{{- end -}}
+		</ul>
+	</div>
+
+	{{ partial "footer.html" . }}
+</body>
+
+</html>

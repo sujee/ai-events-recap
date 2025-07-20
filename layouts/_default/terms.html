@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html {{- if (eq .Site.Params.mode "dark" ) -}}class="dark" {{ end }}>
+{{ partial "header.html" . }}
+
+<body>
+	<div class="container wrapper tags">
+		{{ partial "head.html" . }}
+
+		<h1 class="page-title">{{ .Title }}</h1>
+
+		<div class="tag-cloud" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+			{{ range .Data.Terms.ByCount }}
+			<a href="{{ .Page.Permalink }}" style="
+				background: #f8f9fa; 
+				color: #495057; 
+				padding: 8px 16px; 
+				border-radius: 25px; 
+				text-decoration: none; 
+				font-weight: 500; 
+				border: 2px solid #e9ecef;
+				transition: all 0.2s ease;
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				font-size: 0.9rem;
+			" onmouseover="this.style.background='#e1f0ff'; this.style.borderColor='#4f46e5'; this.style.color='#4f46e5';" 
+			   onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#e9ecef'; this.style.color='#495057';">
+				<span>{{ if eq $.Type "tags" }}#{{ end }}{{ .Page.Title | lower }}</span>
+				<span style="
+					background: #6c757d; 
+					color: white; 
+					padding: 2px 6px; 
+					border-radius: 10px; 
+					font-size: 0.75rem; 
+					font-weight: 600;
+				">({{ .Count }})</span>
+			</a>
+			{{ end }}
+		</div>
+	</div>
+	{{ partial "footer.html" . }}
+</body>
+
+</html>

@@ -10,6 +10,22 @@ theme = 'ink-free'
 [taxonomies]
   tag = "tags"
   genre = "genres"
+  category = "categories"
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 10
+
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 20
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
 
 # Ink Free theme configuration
 [params]
