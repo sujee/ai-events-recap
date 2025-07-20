@@ -1,7 +1,12 @@
-baseURL = 'https://example.org/'
+# baseURL = 'https://sujee.github.io/ai-events-recap'
+baseURL = ''
 languageCode = 'en-us'
 title = 'AI Events Recap'
 theme = 'ink-free'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [taxonomies]
   tag = "tags"
