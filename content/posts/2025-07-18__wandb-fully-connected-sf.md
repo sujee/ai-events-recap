@@ -3,9 +3,8 @@ date: '2025-07-18'
 draft: false
 title: 'Weights and Biases Fully Connected - 2025 San Francisco'
 tags: ['ai', 'agents', 'featured']
-categories: ['conferences', 'technical']
+categories: ['conferences']
 summary: '2 day conference in San Francisco, CA focused on Agent building and model training'
-genres: ['conference']
 event_date: '2025-06-15'
 event_page: 'https://wandb.ai/site/resources/events/fully-connected/san-francisco'
 recordings_link: 'https://www.youtube.com/playlist?list=PLD80i8An1OEHWNCwZUgvMe0d1F0m2aUFw'
