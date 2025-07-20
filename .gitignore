@@ -1,5 +1,6 @@
 # Hugo build artifacts
 /public/
+/public-prod/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json

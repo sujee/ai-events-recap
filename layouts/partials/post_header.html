@@ -24,7 +24,7 @@
         <div style="margin-top: 8px; font-size: 0.85em; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
             {{ if .Params.tags }}
             {{ range .Params.tags }}
-            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" style="background: #e1f0ff; color: #1a5490; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; text-decoration: none;">#{{ . }}</a>
+            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; text-decoration: none;">#{{ . }}</a>
             {{ end }}
             {{ end }}
             
