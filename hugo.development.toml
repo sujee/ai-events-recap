@@ -1,0 +1,19 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'AI Events Recap'
+theme = 'ink-free'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[taxonomies]
+  tag = "tags"
+  genre = "genres"
+
+# Ink Free theme configuration
+[params]
+  author = "Your Name"
+  description = "A minimal Hugo blog"
+  wpm = 200
+  maxTags = 5

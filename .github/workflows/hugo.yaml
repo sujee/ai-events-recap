@@ -72,9 +72,9 @@ jobs:
       - name: Build with Hugo
         run: |
           hugo \
+            --config hugo.production.toml \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache Save
         id: cache-save
