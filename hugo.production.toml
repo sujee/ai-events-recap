@@ -4,6 +4,9 @@ title = 'AI Events Recap'
 theme = 'ink-free-sujee'
 canonifyURLs = true
 
+# Google Analytics - replace with your actual GA4 measurement ID
+googleAnalytics = 'G-HGLK33NHNM'
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
@@ -44,3 +47,10 @@ canonifyURLs = true
   description = "A minimal Hugo blog"
   wpm = 200
   maxTags = 5
+
+# Privacy configuration for GDPR compliance
+[privacy]
+  [privacy.googleAnalytics]
+    respectDoNotTrack = true
+    anonymizeIP = true
+    useSessionStorage = false
