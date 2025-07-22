@@ -162,15 +162,25 @@
 								border-top: 1px solid #f1f5f9;
 							">
 								{{ if .Params.summary }}
-								{{ .Params.summary }}
+								{{ .Params.summary | markdownify }}
 								{{ else if isset .Params "description" }}
-								{{ .Description }}
+								{{ .Description | markdownify }}
 								{{ else if gt (len .RawContent) 120 }}
-								{{ slicestr .RawContent 0 120 }}...
+								{{ slicestr .RawContent 0 120 | markdownify }}...
 								{{ else }}
-								{{ .RawContent }}
+								{{ .RawContent | markdownify }}
 								{{ end }}
 							</div>
+							
+							<!-- Read More button - only show if post has actual content -->
+							{{ $trimmedContent := .RawContent | strings.TrimSpace }}
+							{{ if gt (len $trimmedContent) 0 }}
+							<div style="margin-top: 12px;">
+								<a href="{{ .RelPermalink }}" class="read-more-btn">
+									Read More →
+								</a>
+							</div>
+							{{ end }}
 						</div>
 					</div>
 				</div>
