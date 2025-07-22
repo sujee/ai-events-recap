@@ -1,7 +1,7 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'AI Events Recap'
-theme = 'ink-free'
+theme = 'ink-free-sujee'
 
 [caches]
   [caches.images]
