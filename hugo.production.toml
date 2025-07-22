@@ -28,6 +28,16 @@ canonifyURLs = true
   url = "/about/"
   weight = 30
 
+# Markdown configuration for external links
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+
 # Ink Free theme configuration
 [params]
   author = "Your Name"

@@ -163,13 +163,13 @@
 								border-top: 1px solid #f1f5f9;
 							">
 								{{ if .Params.summary }}
-								{{ .Params.summary }}
+								{{ .Params.summary | markdownify }}
 								{{ else if isset .Params "description" }}
-								{{ .Description }}
+								{{ .Description | markdownify }}
 								{{ else if gt (len .RawContent) 120 }}
-								{{ slicestr .RawContent 0 120 }}...
+								{{ slicestr .RawContent 0 120 | markdownify }}...
 								{{ else }}
-								{{ .RawContent }}
+								{{ .RawContent | markdownify }}
 								{{ end }}
 							</div>
 						</div>
