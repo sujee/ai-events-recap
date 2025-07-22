@@ -41,7 +41,7 @@
 								onmouseout="this.style.color='#1e293b';">{{.Title}}{{ if .Draft }}<sup
 										class="draft-label">DRAFT</sup>{{ end }}</a>
 								
-								<div style="margin-top: 8px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+								<div style="margin-top: 8px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-tag-grid">
 									{{ if .Params.genres }}
 									{{ range .Params.genres }}
 									<a href="{{ "/genres/" | relLangURL }}{{ . | urlize }}" style="
@@ -84,7 +84,7 @@
 								</div>
 							</h4>
 							<!-- Tags + Recordings -->
-							<div style="margin: 12px 0 8px 0; padding-top: 8px; border-top: 1px solid #f1f5f9; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+							<div style="margin: 12px 0 8px 0; padding-top: 8px; border-top: 1px solid #f1f5f9; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-tag-grid">
 								{{ if .Params.tags }}
 								{{ range .Params.tags }}
 								<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
@@ -116,7 +116,7 @@
 							
 							<!-- Event Page + Social Media -->
 							{{ if or .Params.event_page .Params.social_linkedin .Params.social_x .Params.social_bluesky .Params.social_mastodon .Params.social_instagram .Params.social_youtube }}
-							<div style="margin-bottom: 10px; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+							<div style="margin-bottom: 10px; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-social-row">
 								{{ if .Params.event_page }}
 								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
 								{{ end }}
