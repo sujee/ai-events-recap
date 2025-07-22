@@ -1,5 +1,5 @@
 ---
-date: '2025-07-18'
+date: '2025-06-15'
 draft: false
 title: 'Weights and Biases Fully Connected - 2025 San Francisco'
 tags: ['ai', 'agents', 'featured']

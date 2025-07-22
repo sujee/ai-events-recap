@@ -1,5 +1,5 @@
 ---
-date: '2025-07-01'
+date: '2025-06-03'
 draft: false
 title: "AI Engineer World's Fair - 2025 San Francisco"
 tags: ['ai', 'aiengineer', 'featured']
