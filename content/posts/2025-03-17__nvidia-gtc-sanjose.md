@@ -2,7 +2,7 @@
 date: '2025-03-17'
 draft: false
 title: "NVIDIA GTC 2025 - San Jose, CA"
-tags: ['ai', 'robots', 'cuda', 'nvidia', 'models', 'agents' ]
+topics: ['ai', 'robots', 'cuda', 'nvidia', 'models', 'agents' ]
 categories: ['conference']
 summary: "Nvidia's premiere conference"
 event_date: '2025-03-17'

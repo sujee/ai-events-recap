@@ -8,13 +8,13 @@ theme = 'ink-free-sujee'
     dir = ':cacheDir/images'
 
 [taxonomies]
-  tag = "tags"
+  topic = "topics"
   genre = "genres"
   category = "categories"
 
 [[menu.main]]
-  name = "Tags"
-  url = "/tags/"
+  name = "Topics"
+  url = "/topics/"
   weight = 10
 
 [[menu.main]]
@@ -42,4 +42,4 @@ theme = 'ink-free-sujee'
   author = "Your Name"
   description = "A minimal Hugo blog"
   wpm = 200
-  maxTags = 5
+  maxTopics = 5

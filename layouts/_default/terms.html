@@ -3,7 +3,7 @@
 {{ partial "header.html" . }}
 
 <body>
-	<div class="container wrapper tags">
+	<div class="container wrapper topics">
 		{{ partial "head.html" . }}
 
 		<h1 class="page-title">{{ .Title }}</h1>
@@ -25,7 +25,7 @@
 				font-size: 0.9rem;
 			" onmouseover="this.style.background='#e1f0ff'; this.style.borderColor='#4f46e5'; this.style.color='#4f46e5';" 
 			   onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#e9ecef'; this.style.color='#495057';">
-				<span>{{ if eq $.Type "tags" }}#{{ end }}{{ .Page.Title | lower }}</span>
+				<span>{{ if eq $.Type "topics" }}#{{ end }}{{ .Page.Title | lower }}</span>
 				<span style="
 					background: #6c757d; 
 					color: white; 

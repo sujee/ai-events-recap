@@ -9,7 +9,7 @@
 		<div class="recent-posts section">
 			<div style="margin-bottom: 25px;">
 				<h1 class="page-title" style="margin-bottom: 8px; display: inline-flex; align-items: baseline; gap: 8px;">
-					<span>{{ if eq .Type "tags" }}#{{ end }}{{ .Title | lower }}</span>
+					<span>{{ if eq .Type "topics" }}#{{ end }}{{ .Title | lower }}</span>
 					<span style="
 						color: #6c757d; 
 						font-size: 0.85rem; 
@@ -17,7 +17,7 @@
 						font-style: italic;
 					">({{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }})</span>
 				</h1>
-				<p style="color: #666; margin: 0; font-size: 0.9rem;">All posts with {{ lower .Type | singularize }} "{{ if eq .Type "tags" }}#{{ end }}{{ .Title | lower }}"</p>
+				<p style="color: #666; margin: 0; font-size: 0.9rem;">All posts with {{ lower .Type | singularize }} "{{ if eq .Type "topics" }}#{{ end }}{{ .Title | lower }}"</p>
 			</div>
 			
 			<div class="posts" style="display: flex; flex-direction: column; gap: 8px; margin-top: 20px;">
@@ -82,11 +82,11 @@
 									{{ end }}
 								</div>
 							</h4>
-							<!-- Tags + Recordings -->
+							<!-- Topics + Recordings -->
 							<div style="margin: 12px 0 8px 0; padding-top: 8px; border-top: 1px solid #f1f5f9; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
-								{{ if .Params.tags }}
-								{{ range .Params.tags }}
-								<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
+								{{ if .Params.topics }}
+								{{ range .Params.topics }}
+								<a href="{{ $.Site.BaseURL }}topics/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
 								{{ end }}
 								{{ end }}
 								

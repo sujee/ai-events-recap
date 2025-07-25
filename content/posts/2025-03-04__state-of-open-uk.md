@@ -2,7 +2,7 @@
 date: '2025-03-04'
 draft: false
 title: "State of Open 2025 UK"
-tags: ['ai', 'open-source']
+topics: ['ai', 'open-source']
 categories: ['conference']
 summary: "UK's open technology conference"
 event_date: '2025-03-04'

@@ -83,11 +83,11 @@
 									{{ end }}
 								</div>
 							</h4>
-							<!-- Tags + Recordings -->
+							<!-- Topics + Recordings -->
 							<div style="margin: 12px 0 8px 0; padding-top: 8px; border-top: 1px solid #f1f5f9; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-tag-grid">
-								{{ if .Params.tags }}
-								{{ range .Params.tags }}
-								<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
+								{{ if .Params.topics }}
+								{{ range .Params.topics }}
+								<a href="{{ $.Site.BaseURL }}topics/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
 								{{ end }}
 								{{ end }}
 								

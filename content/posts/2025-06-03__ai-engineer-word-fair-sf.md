@@ -2,7 +2,7 @@
 date: '2025-06-03'
 draft: false
 title: "AI Engineer World's Fair - 2025 San Francisco"
-tags: ['ai', 'aiengineer', 'featured']
+topics: ['ai', 'aiengineer', 'featured']
 categories: ['conference']
 summary: "The 'ai engineer' conference"
 event_date: '2025-06-03'

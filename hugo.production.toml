@@ -12,13 +12,13 @@ googleAnalytics = 'G-HGLK33NHNM'
     dir = ':cacheDir/images'
 
 [taxonomies]
-  tag = "tags"
+  topic = "topics"
   genre = "genres"
   category = "categories"
 
 [[menu.main]]
-  name = "Tags"
-  url = "/tags/"
+  name = "Topics"
+  url = "/topics/"
   weight = 10
 
 [[menu.main]]
@@ -46,7 +46,7 @@ googleAnalytics = 'G-HGLK33NHNM'
   author = "Your Name"
   description = "A minimal Hugo blog"
   wpm = 200
-  maxTags = 5
+  maxTopics = 5
 
 # Privacy configuration for GDPR compliance
 [privacy]

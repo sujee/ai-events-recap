@@ -36,6 +36,10 @@ I highlighy recommend watching this talk ..etc
 Run locally
 
 ```bash
+# listen on localhost
 hugo server --config hugo.development.toml -D -F
+
+# listen on public IP - to test with mobile
+hugo server --config hugo.development.toml -D -F  --bind 0.0.0.0
 ```
 
