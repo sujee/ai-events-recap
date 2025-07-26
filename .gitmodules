@@ -10,3 +10,6 @@
 [submodule "themes/typo"]
 	path = themes/typo
 	url = https://github.com/tomfran/typo.git
+[submodule "themes/ink-free-sujee"]
+	path = themes/ink-free-sujee
+	url = https://github.com/sujee/hugo-ink-free-theme
