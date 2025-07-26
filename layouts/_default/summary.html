@@ -10,7 +10,7 @@
 		{{ if .Params.topics }}
 		{{ $sortedTopics := sort .Params.topics }}
 		{{ if in .Params.topics "featured" }}
-		<a href="{{ $.Site.BaseURL }}topics/{{ "featured" | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 1px 4px; border-radius: 2px; font-size: 0.75em; margin-left: 8px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#featured</a>
+		<a href="{{ $.Site.BaseURL }}topics/{{ "featured" | urlize }}/" class="topic-featured" style="background: #e1f0ff; color: #1a5490; padding: 1px 4px; border-radius: 2px; font-size: 0.75em; margin-left: 8px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#featured</a>
 		{{ end }}
 		{{ range $sortedTopics }}
 		{{ if ne . "featured" }}
