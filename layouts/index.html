@@ -56,30 +56,25 @@
 									">{{ . }}</a>
 									{{ end }}
 									{{ end }}
-									{{ if .Params.categories }}
-									{{ range .Params.categories }}
-									<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" style="
-										background: #f3e8ff; 
-										color: #7c3aed; 
-										padding: 4px 8px; 
-										border-radius: 6px; 
-										font-size: 0.75em; 
-										text-decoration: none;
-										font-weight: 500;
-										border: 1px solid #ddd6fe;
-									">{{ . }}</a>
-									{{ end }}
-									{{ end }}
 								</div>
 							</h4>
-							<!-- Topics + Recordings -->
+							<!-- Categories, Topics -->
 							<div style="margin: 12px 0 8px 0; padding-top: 8px; border-top: 1px solid #f1f5f9; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-tag-grid">
+								{{ if .Params.categories }}
+								{{ range .Params.categories }}
+								<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" style="background: #f3e8ff; color: #7c3aed; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #ddd6fe;">{{ . }}</a>
+								{{ end }}
+								{{ end }}
 								{{ if .Params.topics }}
 								{{ range .Params.topics }}
 								<a href="{{ $.Site.BaseURL }}topics/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
 								{{ end }}
 								{{ end }}
-								
+							</div>
+							
+							<!-- Recording Links, Event Page + Social Media -->
+							{{ if or .Params.recordings_link .Params.recordings_link2 .Params.event_page .Params.social_linkedin .Params.social_x .Params.social_bluesky .Params.social_mastodon .Params.social_instagram .Params.social_youtube }}
+							<div style="margin-bottom: 10px; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-social-row">
 								{{ if .Params.recordings_link }}
 								<a href="{{ .Params.recordings_link }}" target="_blank" style="background: #fff0f5; color: #dc143c; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid #ffd0df; box-shadow: 0 1px 2px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 4px;">
 									{{ if or (strings.Contains .Params.recordings_link "youtube.com") (strings.Contains .Params.recordings_link "youtu.be") }}
@@ -101,11 +96,11 @@
 									{{ end }}
 								</a>
 								{{ end }}
-							</div>
-							
-							<!-- Event Page + Social Media -->
-							{{ if or .Params.event_page .Params.social_linkedin .Params.social_x .Params.social_bluesky .Params.social_mastodon .Params.social_instagram .Params.social_youtube }}
-							<div style="margin-bottom: 10px; font-size: 0.85em; line-height: 1.5; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;" class="mobile-social-row">
+								
+								{{ if and (or .Params.recordings_link .Params.recordings_link2) (or .Params.event_page .Params.social_linkedin .Params.social_x .Params.social_bluesky .Params.social_mastodon .Params.social_instagram .Params.social_youtube) }}
+								<span style="width: 12px;"></span>
+								{{ end }}
+								
 								{{ if .Params.event_page }}
 								<a href="{{ .Params.event_page }}" target="_blank" style="background: #f0f4ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #c7d2fe;">🌐 Event Page</a>
 								{{ end }}
