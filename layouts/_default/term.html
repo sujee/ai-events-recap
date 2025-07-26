@@ -79,8 +79,14 @@
 								{{ end }}
 								{{ end }}
 								{{ if .Params.topics }}
-								{{ range .Params.topics }}
+								{{ $sortedTopics := sort .Params.topics }}
+								{{ if in .Params.topics "featured" }}
+								<a href="{{ $.Site.BaseURL }}topics/{{ "featured" | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#featured</a>
+								{{ end }}
+								{{ range $sortedTopics }}
+								{{ if ne . "featured" }}
 								<a href="{{ $.Site.BaseURL }}topics/{{ . | urlize }}/" style="background: #e1f0ff; color: #1a5490; padding: 3px 6px; border-radius: 4px; text-decoration: none; font-weight: 500; border: 1px solid #cce7ff;">#{{ . }}</a>
+								{{ end }}
 								{{ end }}
 								{{ end }}
 							</div>
