@@ -9,7 +9,7 @@
     </div>
     {{ end }}
     <div class="matter">
-        <h1 class="title">{{ .Title }}{{ if .Params.event_date }} <span style="background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 8px; font-weight: 500; border: 1px solid #fde68a;">[{{ dateFormat "Jan 2, 2006" .Params.event_date }}]</span>{{ end }}
+        <h1 class="title">{{ .Title }}{{/* if .Params.event_date }} <span style="background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 8px; font-weight: 500; border: 1px solid #fde68a;">[{{ dateFormat "Jan 2, 2006" .Params.event_date }}]</span>{{ end */}}
             {{ if .Params.genres }}
             {{ range .Params.genres }}
             <a href="{{ "/genres/" | relLangURL }}{{ . | urlize }}" style="background: #e8f5e8; color: #2d5a2d; padding: 2px 6px; border-radius: 3px; font-size: 0.5em; margin-left: 8px; text-decoration: none;">{{ . }}</a>
