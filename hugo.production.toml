@@ -29,10 +29,6 @@ googleAnalytics = 'G-HGLK33NHNM'
   url = "/categories/"
   weight = 20
 
-[[menu.main]]
-  name = "Search"
-  url = "/search/"
-  weight = 25
 
 [[menu.main]]
   name = "About"

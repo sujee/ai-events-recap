@@ -24,13 +24,43 @@
 		</nav>
 	</div>
 
-	<nav class="nav">
-		<ul class="flat">
+	<nav class="nav" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+		<ul class="flat" style="margin: 0;">
 			{{ range .Site.Menus.main }}
 			<li>
 				<a href="{{ .URL }}">{{ .Name }}</a>
 			</li>
 			{{ end }}
 		</ul>
+		
+		<!-- Search Bar in Navbar -->
+		<div class="navbar-search" style="margin-left: auto; position: relative;">
+			<input type="text" id="navbar-search-input" placeholder="Search..." style="
+				padding: 8px 12px 8px 35px;
+				font-size: 14px;
+				border: 1px solid #ddd;
+				border-radius: 6px;
+				background: #fafafa;
+				width: 200px;
+				transition: all 0.3s ease;
+			" 
+			onfocus="this.style.borderColor='#3b82f6'; this.style.background='#ffffff'; this.style.width='250px';" 
+			onblur="this.style.borderColor='#ddd'; this.style.background='#fafafa'; this.style.width='200px';">
+			<!-- Search Icon -->
+			<svg style="
+				position: absolute;
+				left: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 18px;
+				height: 18px;
+				color: #374151;
+				pointer-events: none;
+				stroke-width: 2;
+			" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<circle cx="11" cy="11" r="8"></circle>
+				<path d="21 21l-4.35-4.35"></path>
+			</svg>
+		</div>
 	</nav>
 </div>

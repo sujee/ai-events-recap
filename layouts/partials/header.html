@@ -54,4 +54,29 @@
 	{{- range .Site.Params.customJS }}
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>{{- end }}
 	{{- end }}
+	
+	<!-- Navbar Search Functionality -->
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const navbarSearchInput = document.getElementById('navbar-search-input');
+		
+		if (navbarSearchInput) {
+			// Populate search bar with current query from URL
+			const urlParams = new URLSearchParams(window.location.search);
+			const currentQuery = urlParams.get('q');
+			if (currentQuery) {
+				navbarSearchInput.value = currentQuery;
+			}
+			
+			navbarSearchInput.addEventListener('keypress', function(e) {
+				if (e.key === 'Enter') {
+					const query = this.value.trim();
+					if (query) {
+						window.location.href = '/search/?q=' + encodeURIComponent(query);
+					}
+				}
+			});
+		}
+	});
+	</script>
 </head>

@@ -1,11 +1,11 @@
 ---
 title: "Search"
-date: 2025-01-01
 layout: single
+hide_title: true
 ---
 
 <div class="search-container">
-    <input type="text" id="search-input" placeholder="Search AI events, topics, or content..." autofocus>
+    <h2 id="search-heading" style="margin-bottom: 2rem; color: #333; font-size: 1.5em;"></h2>
     <div id="search-results"></div>
 </div>
 
@@ -16,21 +16,6 @@ layout: single
 .search-container {
     max-width: 600px;
     margin: 2rem 0;
-}
-
-#search-input {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-sizing: border-box;
-}
-
-#search-input:focus {
-    outline: none;
-    border-color: #007acc;
 }
 
 #search-results {

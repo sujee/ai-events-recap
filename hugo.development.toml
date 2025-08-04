@@ -25,10 +25,6 @@ theme = 'ink-free-sujee'
   url = "/categories/"
   weight = 20
 
-[[menu.main]]
-  name = "Search"
-  url = "/search/"
-  weight = 25
 
 [[menu.main]]
   name = "About"
