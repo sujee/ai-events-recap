@@ -72,7 +72,9 @@
 				if (e.key === 'Enter') {
 					const query = this.value.trim();
 					if (query) {
-						window.location.href = '/search/?q=' + encodeURIComponent(query);
+						const baseURL = window.location.pathname.includes('/ai-events-recap/') 
+							? '/ai-events-recap' : '';
+						window.location.href = baseURL + '/search/?q=' + encodeURIComponent(query);
 					}
 				}
 			});
