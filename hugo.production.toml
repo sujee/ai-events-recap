@@ -4,6 +4,9 @@ title = 'AI Events Recap'
 theme = 'ink-free-sujee'
 canonifyURLs = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 # Google Analytics - replace with your actual GA4 measurement ID
 googleAnalytics = 'G-HGLK33NHNM'
 
@@ -25,6 +28,11 @@ googleAnalytics = 'G-HGLK33NHNM'
   name = "Categories"
   url = "/categories/"
   weight = 20
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 25
 
 [[menu.main]]
   name = "About"

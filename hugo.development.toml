@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'AI Events Recap'
 theme = 'ink-free-sujee'
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
@@ -21,6 +24,11 @@ theme = 'ink-free-sujee'
   name = "Categories"
   url = "/categories/"
   weight = 20
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 25
 
 [[menu.main]]
   name = "About"
