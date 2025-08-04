@@ -31,6 +31,11 @@ theme = 'ink-free-sujee'
   url = "/about/"
   weight = 30
 
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/sujee/ai-events-recap"
+  weight = 40
+
 # Markdown configuration for external links
 [markup]
   [markup.goldmark]

@@ -28,7 +28,12 @@
 		<ul class="flat" style="margin: 0;">
 			{{ range .Site.Menus.main }}
 			<li>
-				<a href="{{ .URL }}">{{ .Name }}</a>
+				<a href="{{ .URL }}"{{ if eq .Name "GitHub" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+					{{ if eq .Name "GitHub" }}
+						<img src="{{ $.Site.BaseURL }}images/github.svg" alt="GitHub" style="display: inline; vertical-align: middle; margin-right: 4px; width: 16px; height: 16px;">
+					{{ end }}
+					{{ .Name }}
+				</a>
 			</li>
 			{{ end }}
 		</ul>
