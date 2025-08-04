@@ -68,4 +68,69 @@
 			</svg>
 		</div>
 	</nav>
+	
+	<!-- Tag Cloud -->
+	<div class="tag-cloud" style="margin-top: 1rem; padding: 0.5rem 0;">
+		{{ $topics := .Site.Taxonomies.topics }}
+		{{ $categories := .Site.Taxonomies.categories }}
+		
+		<!-- Categories Section -->
+		{{ if $categories }}
+		<div class="categories-section" style="margin-bottom: 0.5rem;">
+			<span style="font-weight: bold; margin-right: 0.5rem; color: #666;">Categories:</span>
+			{{ $sortedCategories := sort $categories "Count" "desc" }}
+			{{ range $sortedCategories }}
+				<a href="{{ $.Site.BaseURL }}categories/{{ .Page.Title | urlize }}/" class="tag-item category" style="
+					display: inline-block;
+					padding: 2px 8px;
+					margin: 2px 4px;
+					border-radius: 12px;
+					text-decoration: none;
+					font-size: {{ if gt .Count 5 }}0.9em{{ else if gt .Count 2 }}0.8em{{ else }}0.7em{{ end }};
+					background: #f0f9ff;
+					color: #0284c7;
+					border: 1px solid #bae6fd;
+				" title="{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}">
+					{{ .Page.Title }} ({{ .Count }})
+				</a>
+			{{ end }}
+		</div>
+		{{ end }}
+		
+		<!-- Topics Section -->
+		{{ if $topics }}
+		<div class="topics-section">
+			<span style="font-weight: bold; margin-right: 0.5rem; color: #666;">Topics:</span>
+			{{ $sortedTopics := sort $topics "Count" "desc" }}
+			{{ range first 5 $sortedTopics }}
+				<a href="{{ $.Site.BaseURL }}topics/{{ .Page.Title | urlize }}/" class="tag-item topic" style="
+					display: inline-block;
+					padding: 2px 8px;
+					margin: 2px 4px;
+					border-radius: 12px;
+					text-decoration: none;
+					font-size: {{ if gt .Count 5 }}0.9em{{ else if gt .Count 2 }}0.8em{{ else }}0.7em{{ end }};
+					background: #e7f3ff;
+					color: #0066cc;
+					border: 1px solid #b3d9ff;
+				" title="{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}">
+					{{ .Page.Title | lower }} ({{ .Count }})
+				</a>
+			{{ end }}
+			<a href="{{ $.Site.BaseURL }}topics/" style="
+				display: inline-block;
+				padding: 2px 8px;
+				margin: 2px 4px;
+				border-radius: 12px;
+				text-decoration: none;
+				font-size: 0.7em;
+				background: #f8f9fa;
+				color: #6c757d;
+				border: 1px solid #dee2e6;
+			" title="View all topics">
+				view all
+			</a>
+		</div>
+		{{ end }}
+	</div>
 </div>
