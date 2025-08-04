@@ -1,10 +1,16 @@
 # AI Events Recap
 
-## Sample Entry 
+This repo lists contents from good conferences when they are published.
+
+**[Access the web site](https://sujee.github.io/ai-events-recap/)**
+
+## Submit a new entry.
 
 file name : `yyyy-mm-dd__ai-conf-sf.md`
 
-Format
+The date is conference date.
+
+**File format**
 
 ```md
 ---
@@ -33,13 +39,27 @@ I highlighy recommend watching this talk ..etc
 
 ## Dev Notes
 
-Run locally
+**1. install hugo**
+
+Easiest option is download the right [hugo release](https://github.com/gohugoio/hugo/releases).
+
+Use extended version
+
+**2. Clone the repo**
 
 ```bash
-# listen on localhost
-hugo server --config hugo.development.toml -D -F
-
-# listen on public IP - to test with mobile
-hugo server --config hugo.development.toml -D -F  --bind 0.0.0.0
+git   clone   --recursive  https://github.com/sujee/ai-events-recap
+cd   ai-events-recap
 ```
+
+**3. Run hugo server**
+
+```bash
+./build-dev.sh
+```
+
+**4. Access the site**
+
+Go to url : http://localhost:1313
+
 

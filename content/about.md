@@ -6,34 +6,16 @@ draft: false
 
 # About AI Events Recap
 
-Welcome to AI Events Recap, your curated source for artificial intelligence conferences, meetups, and events.
+Welcome to AI Events Recap.
 
-## What We Do
+There are lot of great AI events (conferences / meetups) going around the world.  And most of them post the talks and workshops online.
 
-We attend and document AI events, providing:
+And we list to good conference content when they are published.
 
-- **Event Summaries**: Key highlights and takeaways
-- **Speaker Insights**: Notable presentations and talks  
-- **Recording Links**: Access to session recordings when available
-- **Social Connections**: Links to event organizers and communities
+## How to Submit Conference Content
 
-## Event Categories
+Here is our [github repo](https://github.com/sujee/ai-events-recap)
 
-- **Conferences**: Large-scale AI conferences and symposiums
-- **Technical**: Deep-dive technical sessions and workshops
-- **Beginner-Friendly**: Events welcoming newcomers to AI
+Open an issue. 
 
-## Topics We Cover
-
-- **Artificial Intelligence**: General AI developments and trends
-- **Machine Learning**: ML models, training, and applications
-- **AI Agents**: Autonomous systems and agent frameworks
-- **LLMs**: Large Language Models and natural language processing
-
-## Stay Connected
-
-Follow our coverage of the latest AI events and discover new learning opportunities in the rapidly evolving world of artificial intelligence.
-
----
-
-*This site is maintained as a community resource for AI enthusiasts and professionals.*
+Even better, open a PR.  See submission format in [here](https://github.com/sujee/ai-events-recap)
