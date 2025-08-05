@@ -6,11 +6,13 @@ draft: false
 
 # About AI Events Recap
 
-Welcome to AI Events Recap.
+Welcome to AI Events Recap.  I created this website to solve a problem I have been having.
 
 There are lot of great AI events (conferences / meetups) going around the world.  And most of them post the talks and workshops online.
 
-And we list to good conference content when they are published.
+But ironically, this content is not easy to find.  The conference website goes dormant after conference.  Finding the posted content takes searching around.
+
+So I started the site, to list good content from events.
 
 ## How to Submit Conference Content
 
