@@ -8,7 +8,9 @@ canonifyURLs = true
   home = ["HTML", "RSS", "JSON"]
 
 # Google Analytics - replace with your actual GA4 measurement ID
-googleAnalytics = 'G-HGLK33NHNM'
+[services]
+  [services.googleAnalytics]
+    id = 'G-HGLK33NHNM'
 
 [caches]
   [caches.images]
