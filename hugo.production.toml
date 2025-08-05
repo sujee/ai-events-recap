@@ -19,6 +19,17 @@ googleAnalytics = 'G-HGLK33NHNM'
   genre = "genres"
   category = "categories"
 
+[related]
+  includeNewer = true
+  threshold = 30
+  toLower = false
+  [[related.indices]]
+    name = "topics"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+
 [[menu.main]]
   name = "Topics"
   url = "/topics/"

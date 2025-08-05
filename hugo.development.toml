@@ -15,6 +15,17 @@ theme = 'ink-free-sujee'
   genre = "genres"
   category = "categories"
 
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = false
+  [[related.indices]]
+    name = "topics"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+
 [[menu.main]]
   name = "Topics"
   url = "/topics/"
