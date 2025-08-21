@@ -7,7 +7,7 @@ categories: ['conference']
 summary: ''
 event_date: '2025-07-08'
 event_page: 'https://wandb.ai/site/resources/events/fully-connected/san-francisco'
-recordings_link: 'The Barcelona Developers Conference 2025'
+recordings_link: 'https://www.youtube.com/playlist?list=PLzJFNZtyAbyyfUadLCuSc-8CdHct8NeSa'
 social_linkedin: 'https://www.linkedin.com/company/devbcn'
 social_x: 'https://twitter.com/dev_bcn'
 social_youtube: 'https://www.youtube.com/dev_bcn'
