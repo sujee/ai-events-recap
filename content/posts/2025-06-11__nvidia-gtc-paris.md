@@ -2,7 +2,7 @@
 date: '2025-06-11'
 draft: false
 title: "NVIDIA GTC Paris 2025"
-topics: ['ai', 'robots', 'cuda', 'nvidia', 'models', 'agents' ]
+topics: ['ai', 'robots', 'cuda', 'nvidia', 'models', 'agents', 'featured' ]
 categories: ['conference']
 summary: "Nvidia's conference in Paris, France"
 event_date: '2025-06-11'
